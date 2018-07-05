@@ -8,8 +8,11 @@ underscore_counter = 0
 
 puts "Voici un array contenant des comptes twitter de journalistes."
 puts "-------------------------------------------------------------"
+
+#QUESTION1
 puts "> Il y a #{twitter_bis.count} journalistes dans cet array."
 
+#QUESTION2
 twitter_bis.map {|x|
   if x.scan(/[0123456789]/).length > 0
     n_counter += 1
@@ -17,6 +20,7 @@ twitter_bis.map {|x|
 }
 puts "> #{n_counter} handles contiennent au moins un numéro dans cet array."
 
+#QUESTION3
 twitter_bis.map {|x|
   x = x.downcase
   if x.include?('aude')
@@ -25,7 +29,7 @@ twitter_bis.map {|x|
 }
 puts "> #{str_counter} handles contiennent les lettres du prénom 'Aude' dans cet array."
 
-
+#QUESTION5
 twitter_bis.map {|x|
   if x.scan(/[ABCDEFGHIJKLMNOPQRSTUVWXYZ]/).length > 0
     u_counter += 1
@@ -33,10 +37,13 @@ twitter_bis.map {|x|
 }
 puts "> #{u_counter} handles contiennent au moins une majuscule."
 
+#QUESTION6
 twitter_bis.map {|x|
   if x.scan('_').length > 0
     underscore_counter += 1
   end
 }
 puts "> Il y a #{underscore_counter} '_' dans cet array."
+
+#QUESTION7
 puts "> Voici cet array classé dans l'ordre alphabétique #{twitter_bis.sort {|a, b| a <=> b}}"
